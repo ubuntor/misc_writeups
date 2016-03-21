@@ -2,7 +2,7 @@
 
 Looking at the code, `encrypt` takes a message, breaks it up into 256 byte chunks, and for each one, multiplies it by `k^r` for a random `r`, then stores the ciphertext and `r`, all mod `N`.
 
-We're given `msg.txt` and `msg.enc`, which have has two chunks, giving us two plaintext-ciphertext pairs.
+We're given `msg.txt` and `msg.enc`, which have two chunks, giving us two plaintext-ciphertext pairs.
 Now, `m * k^r = c mod N`, so `k^r = m^-1 * c mod N`. We have two pairs, giving us:
 ```
 k^r1 = m1^-1 * c1 mod N
